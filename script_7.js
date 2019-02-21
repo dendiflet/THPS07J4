@@ -55,5 +55,67 @@ console.log(title_of_the_most_unrented_book)
 
 
 // Trouve le livre avec l'ID: 873495
-// Supprime le livre avec l'ID: 133712
+
+let array_for_one_particular_book = []
+books.forEach(one => {
+	if (one.id == 873495) {
+		array_for_one_particular_book.push(one)
+	}
+});
+
+console.log("voila le livre avec l'id 873495 : ")
+console.log(array_for_one_particular_book)
+
+
 // Trie les livres par ordre alphabétique
+
+books.sort(function(a, b){
+  var x = a.title.toLowerCase();
+  var y = b.title.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+console.log("voici les livres rangé dans l'ordre alpha : ")
+console.log(books)
+
+
+// Supprime le livre avec l'ID: 133712
+
+let nb_of_books = books.length
+let id_of_the_book_to_delete
+
+for(let count=0; count<= nb_of_books-1; count++) {
+	let one = books[count]
+	if (one.id == 133712) {
+		id_of_the_book_to_delete = count
+	}
+}
+
+console.log(id_of_the_book_to_delete)
+books[id_of_the_book_to_delete] = 0
+
+console.log("voila le livre avec l'id 133712 a disparut : ")
+console.log(books)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

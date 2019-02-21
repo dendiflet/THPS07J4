@@ -43,6 +43,7 @@ combination = (one.first + " " + one.last)
 console.log("voici l'array des nom/prenom' : ")
 console.log(name_array)
 
+
 // 3 Quel âge aurait chaque inventeur aujourd hui ?
 
 entrepreneurs.forEach(one => {
@@ -56,12 +57,16 @@ console.log("si tu regarde bien il y a une nouvelle entré dans l'array")
 console.log(entrepreneurs)
 
 
-
-
-
-
-
-
-
-
 // 4 Trie les inventeurs par ordre alphabétique du nom de famille
+
+entrepreneurs.sort(function(a, b){
+  var x = a.last.toLowerCase();
+  var y = b.last.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+console.log("ils sont classé par ordre alpha du nom de famille :")
+console.log(entrepreneurs)
+
